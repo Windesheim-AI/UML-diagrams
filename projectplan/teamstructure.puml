@@ -1,0 +1,38 @@
+@startuml Team Structure
+package "Windesheim AI-app" <<Rectangle>> {
+    object "Wim Rill" as coach {
+        Schoolcoach
+    }
+    object "Rob van de Star" as productowner {
+        Product Owner
+    }
+    object "Yannick Bruintjes" as YB {
+        Teamlead
+        Developer
+    }
+    object "Tim Bentum" as TB {
+        SCRUM Master
+        Developer
+    }
+    object "Jorim Dijkstra" as JD {
+        Developer
+    }
+    object "Rick Koekkoek" as RK {
+        Developer
+    }
+    object "MinSeo Lee" as ML {
+        Developer
+    }
+    object "Koen van Meijeren" as KvM {
+        Developer
+    }
+
+    productowner-[dashed]-YB
+    productowner-[dashed]-TB
+    productowner-[dashed]-JD
+    productowner-[dashed]-RK
+    productowner-[dashed]-ML
+    productowner-[dashed]-KvM
+}
+
+@enduml
