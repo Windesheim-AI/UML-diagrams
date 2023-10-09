@@ -5,7 +5,6 @@ actor User as U
 actor UserWithSpecialNeeds as USN
 
 package "Milestone 2 - App Settings" {
-    [Specify Notification Preferences] as SNP
     [Switch Theme] as ST
     [Switch Language] as SL
     [Change Font Size] as CFS
@@ -13,17 +12,14 @@ package "Milestone 2 - App Settings" {
     [Upload Profile Photo] as UPP
     [Use Accessibility Features] as UAF
     [Maintain Performance with Customizations] as MPC
-    [Personalize with Intuitive Customization] as PIC
 }
 
-U --> SNP
 U --> ST
 U --> SL
 U --> CFS
 U --> MP
 U --> UPP
 U --> MPC
-U --> PIC
 USN --> UAF
 
 @enduml
