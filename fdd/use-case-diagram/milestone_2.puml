@@ -18,7 +18,6 @@ U --> SL
 U --> CFS
 U --> MP
 U --> UPP
-U --> MPC
 USN --> UAF
 
 @enduml
