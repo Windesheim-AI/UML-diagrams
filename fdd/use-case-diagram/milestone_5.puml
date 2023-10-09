@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+actor User as User
+actor BeginnerUser as Beginner
+
+package "Milestone 5 - Learn to Prompt" {
+    [Engage in Prompt Exercises] as UC5_1
+    [Follow Guided Prompt Creation] as UC5_2
+    [Receive Prompt Best Practices] as UC5_3
+    [Progressive Prompt Learning] as UC5_4
+    [Receive Personalized Assignments] as UC5_5
+    [Get Content Recommendations] as UC5_6
+    [Learn about Ethics] as UC5_7
+}
+
+User --> UC5_1
+User --> UC5_2
+User --> UC5_3
+User --> UC5_5
+User --> UC5_6
+User --> UC5_7
+Beginner --> UC5_4
+
+@enduml

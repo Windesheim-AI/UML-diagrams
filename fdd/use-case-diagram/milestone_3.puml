@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+
+actor WTRManager as Manager
+actor User as AppUser
+
+package "Milestone 3 - Windesheim TechRadar" {
+    [Manage via WTR Dashboard] as UC4
+    [Update App Content in WordPress] as UC5
+    [Read WTR Use Case Prompts] as UC6
+}
+
+Manager --> UC4
+Manager --> UC5
+AppUser --> UC6
+
+Manager --|> AppUser
+
+@enduml

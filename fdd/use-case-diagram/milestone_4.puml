@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+actor NewUser as NewUser
+actor User as User
+
+package "Milestone 4 - App Introduction" {
+    [Provide Professional Background] as UC1
+    [Receive App Tutorial] as UC2
+    [Understand AI Paradox] as UC4
+}
+
+NewUser --> UC1
+NewUser --> UC2
+User --> UC4
+
+@enduml
