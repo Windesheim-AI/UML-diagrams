@@ -11,7 +11,6 @@ package "Milestone 2 - App Settings" {
     [Manage Profile] as MP
     [Upload Profile Photo] as UPP
     [Use Accessibility Features] as UAF
-    [Maintain Performance with Customizations] as MPC
 }
 
 U --> ST
