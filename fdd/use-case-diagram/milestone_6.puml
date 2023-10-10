@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+
+actor User as User
+
+package "Milestone 6 - Generative AI Content" {
+    [Practice Voice AI] as UC6_1
+    [Practice Chat AI] as UC6_2
+    [Practice Video AI] as UC6_3
+    [Practice Image AI] as UC6_4
+    [Track Learning Progress] as UC6_6
+}
+
+User --> UC6_1
+User --> UC6_2
+User --> UC6_3
+User --> UC6_4
+User --> UC6_6
+
+@enduml

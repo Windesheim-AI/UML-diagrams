@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+
+actor User as User
+
+package "Milestone 7 - Community of Practice" {
+    [Share Prompts] as UC7_1
+    [Browse Posts] as UC7_2
+    [Search Content] as UC7_3
+    [View Rank] as UC7_4
+    [Report Content] as UC7_5
+    [Unsubscribe Channels] as UC7_6
+    [Subscribe Channels] as UC7_8
+    [Mute Channels] as UC7_7
+}
+
+User --> UC7_1
+User --> UC7_2
+User --> UC7_3
+User --> UC7_4
+User --> UC7_5
+User --> UC7_6
+User --> UC7_7
+User --> UC7_8
+
+@enduml

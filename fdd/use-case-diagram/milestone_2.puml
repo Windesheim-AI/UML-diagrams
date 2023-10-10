@@ -1,0 +1,25 @@
+@startuml
+left to right direction
+
+actor User as U
+actor UserWithSpecialNeeds as USN
+
+package "Milestone 2 - App Settings" {
+    [Switch Theme] as ST
+    [Switch Language] as SL
+    [Change Font Size] as CFS
+    [Manage Profile] as MP
+    [Upload Profile Photo] as UPP
+    [Use Accessibility Features] as UAF
+    [Change Notification Settings] as CNS
+}
+
+U --> ST
+U --> SL
+U --> CFS
+U --> MP
+U --> UPP
+USN --> UAF
+U --> CNS
+
+@enduml

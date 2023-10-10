@@ -1,0 +1,59 @@
+@startuml "WINsight app"
+
+object User {
+    + Name
+    + Type
+}
+
+object CommunityOfPractice {
+    + Practices
+    + Use cases
+}
+
+object Practice {
+    + Title
+    + Prompt
+    + Date
+}
+
+object UseCase {
+    + ProjectName
+    + ContactPersonEmail
+    + ProductOwner
+    + Minor
+    + ProjectPhase
+    + ValueChainActivity
+    + SBI-code
+    + Innovations
+    + TechProviders
+    + TechThemes
+    + SDGs
+    + PositiveSDGImpacts
+    + NegativeSDGImpacts
+    + ProjectBackground
+    + ProjectGoal
+    + ProjectLink
+    + ProjectVideoLink
+    + ProjectPicture
+}
+
+object News {
+    + Title
+    + Content
+    + Date
+}
+
+object Course {
+    + Content
+}
+
+CommunityOfPractice --> UseCase : Contains
+CommunityOfPractice --> Practice : Has
+
+User <--> CommunityOfPractice : Takes part in
+
+User --> News : Reads
+
+User --> Course : Takes
+
+@enduml
