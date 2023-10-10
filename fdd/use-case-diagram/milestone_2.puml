@@ -11,6 +11,7 @@ package "Milestone 2 - App Settings" {
     [Manage Profile] as MP
     [Upload Profile Photo] as UPP
     [Use Accessibility Features] as UAF
+    [Change Notification Settings] as CNS
 }
 
 U --> ST
@@ -19,5 +20,6 @@ U --> CFS
 U --> MP
 U --> UPP
 USN --> UAF
+U --> CNS
 
 @enduml
