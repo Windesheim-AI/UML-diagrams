@@ -1,47 +1,59 @@
-@startuml EcommerceDomainModel
-package "E-commerce Domain Model" <<Rectangle>> {
-    class User {
-        + Username
-        + Email
-        + Password
-        + Register()
-        + Login()
-    }
+@startuml "WINsight app"
 
-    class Product {
-        + ProductID
-        + Name
-        + Price
-        + Description
-        + GetDetails()
-    }
-
-    class Order {
-        + OrderID
-        + Date
-        + TotalAmount
-        + PlaceOrder()
-    }
-
-    class Cart {
-        + CartID
-        + AddProduct()
-        + RemoveProduct()
-        + Checkout()
-    }
-
-    class Review {
-        + ReviewID
-        + Rating
-        + Comment
-        + WriteReview()
-    }
-
-    User "1" -- "0..*" Cart : Owns
-    User "1" -- "0..*" Order : Places
-    User "1" -- "0..*" Review : Writes
-    Product "0..*" -- "1" Cart : Is In
-    Product "0..*" -- "1" Order : Ordered
-    Product "1" -- "0..*" Review : Reviewed By
+object User {
+    + Name
+    + Type
 }
+
+object CommunityOfPractice {
+    + Practices
+    + Use cases
+}
+
+object Practice {
+    + Title
+    + Prompt
+    + Date
+}
+
+object UseCase {
+    + ProjectName
+    + ContactPersonEmail
+    + ProductOwner
+    + Minor
+    + ProjectPhase
+    + ValueChainActivity
+    + SBI-code
+    + Innovations
+    + TechProviders
+    + TechThemes
+    + SDGs
+    + PositiveSDGImpacts
+    + NegativeSDGImpacts
+    + ProjectBackground
+    + ProjectGoal
+    + ProjectLink
+    + ProjectVideoLink
+    + ProjectPicture
+}
+
+object News {
+    + Title
+    + Content
+    + Date
+}
+
+object Course {
+    + Content
+}
+
+CommunityOfPractice --> UseCase : Contains
+CommunityOfPractice --> Practice : Has
+
+User <--> CommunityOfPractice : Takes part in
+
+User --> News : Reads
+
+User --> Course : Takes
+
 @enduml
