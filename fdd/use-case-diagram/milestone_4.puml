@@ -1,7 +1,7 @@
 @startuml
 left to right direction
 
-actor NewUser as NewUser
+actor NewUser as "New user"
 actor User as User
 
 package "Milestone 4 - App Introduction" {
