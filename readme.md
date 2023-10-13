@@ -1,12 +1,17 @@
 # UML Diagrams Repository
 
-This repository contains UML (Unified Modeling Language) diagrams created using PlantUML. PlantUML is a text-based diagramming tool that allows you to create various types of UML diagrams from simple textual descriptions.
+This repository contains UML (Unified Modeling Language) diagrams created using PlantUML. 
+PlantUML is a text-based diagramming tool that allows you to create various types of 
+UML diagrams from simple textual descriptions.
 
 ## PlantUML
 
 ### What is PlantUML?
 
-PlantUML is an open-source tool for creating UML diagrams from plain text descriptions. It supports various types of UML diagrams, including class diagrams, sequence diagrams, activity diagrams, and more. With PlantUML, you can quickly and easily create professional-looking diagrams using a simple text-based syntax.
+PlantUML is an open-source tool for creating UML diagrams from plain text descriptions. 
+It supports various types of UML diagrams, including class diagrams, sequence diagrams, 
+activity diagrams, and more. With PlantUML, you can quickly and easily create professional-looking 
+diagrams using a simple text-based syntax.
 
 ### How to Use PlantUML
 
@@ -22,8 +27,11 @@ PlantUML is an open-source tool for creating UML diagrams from plain text descri
 
 ### VSCode Extension
 
-Within VSCode, you can use the [PlantUML extension](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) to preview your PlantUML diagrams. This extension also provides syntax highlighting for PlantUML files.
+Within VSCode, you can use the [PlantUML extension](https://marketplace.visualstudio.com/items?itemName=jebbs.plantuml) to preview your PlantUML diagrams. 
+This extension also provides syntax highlighting for PlantUML files.
 
 ### JetBrains Extension
 
-Within JetBrains IDEs (e.g., IntelliJ, PyCharm, etc.), you can use the [PlantUML integration](https://plugins.jetbrains.com/plugin/7017-plantuml-integration) plugin to preview your PlantUML diagrams. This plugin also provides syntax highlighting for PlantUML files.
+Within JetBrains IDEs (e.g., IntelliJ, PyCharm, etc.), you can use the [PlantUML integration](https://plugins.jetbrains.com/plugin/7017-plantuml-integration) 
+plugin to preview your PlantUML diagrams. This plugin also provides syntax highlighting for PlantUML 
+files.
