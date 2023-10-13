@@ -1,7 +1,7 @@
 @startuml
 left to right direction
 
-actor WTRManager as Manager
+actor Manager as "WTR manager"
 actor User as AppUser
 
 package "Milestone 3 - Windesheim TechRadar" {

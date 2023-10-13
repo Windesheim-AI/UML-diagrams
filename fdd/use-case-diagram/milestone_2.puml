@@ -1,8 +1,8 @@
 @startuml
 left to right direction
 
-actor User as U
-actor UserWithSpecialNeeds as USN
+actor User as User
+actor UserWithSpecialNeeds as "User with special needs"
 
 package "Milestone 2 - App Settings" {
     [Switch Theme] as ST
@@ -14,12 +14,12 @@ package "Milestone 2 - App Settings" {
     [Change Notification Settings] as CNS
 }
 
-U --> ST
-U --> SL
-U --> CFS
-U --> MP
-U --> UPP
-USN --> UAF
-U --> CNS
+User --> ST
+User --> SL
+User --> CFS
+User --> MP
+User --> UPP
+UserWithSpecialNeeds --> UAF
+User --> CNS
 
 @enduml
