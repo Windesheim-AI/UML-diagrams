@@ -20,8 +20,14 @@ class TutorialSlice{
     + nextStep() : void
 }
 
+class TutorialResetButton {
+    - navigation : ReactNavigation
+
+    + handleReset() : void
+}
 Tutorial --> TutorialSlice
 Tutorial --> Navigation
 TutorialSlice --> RootState
-
+TutorialResetButton --> Navigation
+TutorialResetButton --> TutorialSlice
 @enduml
