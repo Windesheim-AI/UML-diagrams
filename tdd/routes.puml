@@ -1,0 +1,33 @@
+@startuml Routes
+
+enum Routes {
+    RouteName: string
+}
+
+class RouteLinking {
+    - prefixes: string[]
+    - config: { screens: {} }
+}
+
+class NavigationBarLink {
+    - icon: string
+    - route: string
+
+    + NavigationBarLink(icon: string, route: string)
+}
+
+class ReactNavigationContainer{
+
+}
+class Router {
+    - routeLinking: RouteLinking
+    - navigationBarLinks: NavigationBarLink[]
+
+    + Router(routeLinking: RouteLinking, navigationBarLinks: NavigationBarLink[])
+}
+
+RouteLinking --|> Routes: Uses
+Router --|> Routes: Uses
+NavigationBarLink --|> Routes: Uses
+ReactNavigationContainer --|> RouteLinking: Uses
+@enduml
