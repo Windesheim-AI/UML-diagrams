@@ -1,0 +1,27 @@
+@startuml ReactTutorialComponent
+
+class Tutorial {
+    - tutorialStep : int
+    - tutorialCompleted : bool
+    - modalVisible : bool
+    - navigation : Navigation
+    + handleNext() : void
+}
+
+class Navigation {
+}
+
+
+class TutorialSlice{
+    + tutorialStep : int
+    + tutorialCompleted : bool
+
+    + setCompleted() : void
+    + nextStep() : void
+}
+
+Tutorial --> TutorialSlice
+Tutorial --> Navigation
+TutorialSlice --> RootState
+
+@enduml
