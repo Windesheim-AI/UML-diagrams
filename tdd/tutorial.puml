@@ -21,7 +21,7 @@ class TutorialSlice{
 }
 
 class TutorialResetButton {
-    - navigation : ReactNavigation
+    - navigation : Navigation
 
     + handleReset() : void
 }
