@@ -1,0 +1,32 @@
+@startuml Translation
+
+class LanguageSwitcher {
+    + currentLanguage: LanguageCode
+    + availableLanguages: Language[]
+    + changeLanguage(languageCode: LanguageCode): void
+}
+
+class LanguageSlice {
+    - initialState: LanguageState
+    + languageSlice: Slice<LanguageState>
+    + languageActions: any
+}
+
+class LanguageState {
+    - langCode: LanguageCode
+}
+
+class LanguageCode
+
+class Language {
+    - code: LanguageCode
+    - name: string
+}
+
+LanguageSwitcher --> LanguageSlice
+LanguageSwitcher --> Languages
+LanguageSlice --> LanguageState
+LanguageSlice --> LanguageCode
+LanguageState --> LanguageCode
+
+@enduml

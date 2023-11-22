@@ -1,0 +1,10 @@
+@startuml ErrorBoundary
+
+class ErrorBoundary {
+  -windowWidth: number
+  -windowHeight: number
+  -colors: object
+  -styles: object
+  +handlePress(): void
+}
+@enduml
