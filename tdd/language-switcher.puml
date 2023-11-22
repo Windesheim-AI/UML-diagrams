@@ -1,32 +1,81 @@
-@startuml Translation
+@startuml Translator
+
+class GoogleTranslator {
+  - options: TranslationOptions
+  - to: string
+  - from: string
+  - apiKey: string
+  - cacheProvider?: CacheProvider
+
+  + translate(value: string): Promise<string | undefined>
+  + tryGetGoogleTranslation(value: string): Promise<string | undefined>
+  + fetchGoogleTranslation(value: string): Promise<string>
+}
+
+class Translator {
+  - options: TranslationOptions
+  - to: string
+  - from: string
+  - apiKey: string
+  - cacheProvider?: CacheProvider
+
+  + translate(value: string): Promise<string | undefined>
+}
+
+class IdenticalTranslator {
+  + translate(value: string): Promise<string | undefined>
+}
+
+class Languages {
+  - defaultLanguageCode: string
+  - languages: Record<string, string>
+  + languageLabels(): string[]
+  + getLanguageCodeByTranslation(translation: string): string | undefined
+}
+
+class languageSlice {
+  - initialState: any
+  + changeLanguage(state, action: PayloadAction<any>): void
+}
 
 class LanguageSwitcher {
-    + currentLanguage: LanguageCode
-    + availableLanguages: Language[]
-    + changeLanguage(languageCode: LanguageCode): void
+  - storeDispatcher: any
+  - languageState: any
+  - selectedLanguage: string
+  - handleTranslate: any
+  - selectLanguageText: string
+  - searchText: string
+  - selectableLanguages: string[]
+  - selectedLanguageTranslation: string
+
+  + render(): JSX.Element
 }
 
-class LanguageSlice {
-    - initialState: LanguageState
-    + languageSlice: Slice<LanguageState>
-    + languageActions: any
+class CacheTranslator {
+  - cacheProvider: any
+  - to: string
+
+  + translate(value: string): Promise<string | undefined>
+  + tryGetGoogleTranslationAndCache(value: string): Promise<string | undefined>
+  + setCachedTranslationForValue(value: string, translation?: string): Promise<void>
 }
 
-class LanguageState {
-    - langCode: LanguageCode
+class TranslatorFactory {
+  + create(options: TranslationOptions, cacheProvider?: CacheProvider): Translator
 }
 
-class LanguageCode
+Languages ..> Languages: uses
 
-class Language {
-    - code: LanguageCode
-    - name: string
-}
+languageSlice --|> Languages: contains
+languageSlice --|> PayloadAction: uses
 
-LanguageSwitcher --> LanguageSlice
-LanguageSwitcher --> Languages
-LanguageSlice --> LanguageState
-LanguageSlice --> LanguageCode
-LanguageState --> LanguageCode
+LanguageSwitcher --|> Languages: uses
+LanguageSwitcher --|> any: uses
+
+GoogleTranslator --|> Translator: extends
+IdenticalTranslator --|> Translator: extends
+CacheTranslator --|> Translator: extends
+
+TranslatorFactory --|> Translator: contains
 
 @enduml
