@@ -7,4 +7,11 @@ class ErrorBoundary {
   -styles: object
   +handlePress(): void
 }
+
+class App {
+
+}
+
+App --> ErrorBoundary: Uses
+
 @enduml
