@@ -1,81 +1,26 @@
-@startuml Translator
+@startuml Language Switcher
 
-class GoogleTranslator {
-  - options: TranslationOptions
-  - to: string
-  - from: string
-  - apiKey: string
-  - cacheProvider?: CacheProvider
-
-  + translate(value: string): Promise<string | undefined>
-  + tryGetGoogleTranslation(value: string): Promise<string | undefined>
-  + fetchGoogleTranslation(value: string): Promise<string>
+class i18n {
+    +init(): void
 }
 
-class Translator {
-  - options: TranslationOptions
-  - to: string
-  - from: string
-  - apiKey: string
-  - cacheProvider?: CacheProvider
-
-  + translate(value: string): Promise<string | undefined>
+class TextTranslated {
+    -text: string
+    +render(): React.Element
 }
 
-class IdenticalTranslator {
-  + translate(value: string): Promise<string | undefined>
+class languageOptions {
+    -nl: string
+    -en: string
+    -de: string
 }
 
-class Languages {
-  - defaultLanguageCode: string
-  - languages: Record<string, string>
-  + languageLabels(): string[]
-  + getLanguageCodeByTranslation(translation: string): string | undefined
+class LanguageTranslations {
+    -translation: string
 }
 
-class languageSlice {
-  - initialState: any
-  + changeLanguage(state, action: PayloadAction<any>): void
-}
-
-class LanguageSwitcher {
-  - storeDispatcher: any
-  - languageState: any
-  - selectedLanguage: string
-  - handleTranslate: any
-  - selectLanguageText: string
-  - searchText: string
-  - selectableLanguages: string[]
-  - selectedLanguageTranslation: string
-
-  + render(): JSX.Element
-}
-
-class CacheTranslator {
-  - cacheProvider: any
-  - to: string
-
-  + translate(value: string): Promise<string | undefined>
-  + tryGetGoogleTranslationAndCache(value: string): Promise<string | undefined>
-  + setCachedTranslationForValue(value: string, translation?: string): Promise<void>
-}
-
-class TranslatorFactory {
-  + create(options: TranslationOptions, cacheProvider?: CacheProvider): Translator
-}
-
-Languages ..> Languages: uses
-
-languageSlice --|> Languages: contains
-languageSlice --|> PayloadAction: uses
-
-LanguageSwitcher --|> Languages: uses
-LanguageSwitcher --|> any: uses
-
-GoogleTranslator --|> Translator: extends
-IdenticalTranslator --|> Translator: extends
-CacheTranslator --|> Translator: extends
-
-TranslatorFactory --|> Translator: contains
+i18n --> LanguageTranslations : uses
+TextTranslated --> i18n : uses
+languageOptions --> LanguageTranslations : provides
 
 @enduml
