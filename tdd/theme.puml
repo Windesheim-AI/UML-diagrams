@@ -9,16 +9,7 @@ class CurrentTheme{
 
 }
 
-class App{
-
-}
-
-
-
-CurrentTheme --> AppSelector: Uses
-ColorConfig --> hasKeyInMap: Uses
-ColorConfig --> CurrentTheme: Uses
-hasKeyInMap --> ColorMap: Uses
-App --> ColorConfig: Uses
-AppSelector --> Redux: Uses
+CurrentTheme --> Redux: Stored In
+ColorConfig --> ColorMap: Builds off
+ColorConfig --> CurrentTheme: Retrieves
 @enduml
