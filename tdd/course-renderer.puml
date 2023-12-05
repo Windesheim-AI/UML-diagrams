@@ -1,0 +1,19 @@
+@startuml
+
+start 
+:getData;
+:StageRenderer : determine the type of the b;
+fork 
+:VideoRenderer;
+fork again
+:ButtonRenderer;
+fork again
+:ImageRenderer;
+fork again
+:TextRenderer;
+end fork
+:render block;
+stop
+
+
+@enduml
