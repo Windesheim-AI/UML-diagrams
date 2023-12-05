@@ -1,0 +1,26 @@
+@startuml
+title Course Feature Overview
+
+actor User
+
+User --> CoursesPage: Visit Courses Page
+CoursesPage --> CoursesAPI: Fetch all courses
+CoursesAPI --> CoursesPage: Return courses data
+CoursesPage --> User: Display courses
+
+User --> CoursePage: Select a course
+CoursePage --> CourseAPI: Fetch selected course data
+CourseAPI --> CoursePage: Return course data
+CoursePage --> User: Display course details
+
+User --> StagePage: Select a stage
+StagePage --> StageAPI: Fetch selected stage data
+StageAPI --> StagePage: Return stage data
+StagePage --> User: Display stage details
+
+User --> StageOverviewPage: View stage overview
+StageOverviewPage --> StageAPI: Fetch stage overview data
+StageAPI --> StageOverviewPage: Return stage overview data
+StageOverviewPage --> User: Display stage overview
+
+@enduml

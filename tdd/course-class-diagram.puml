@@ -1,0 +1,68 @@
+@startuml
+class Course {
+  id: string
+  title: string
+  description: string
+  stages: Stage[]
+}
+
+class Stage {
+  id: string
+  title: string
+  blocks: CourseStageBlock[]
+}
+
+class CourseStageBlock {
+  blockType: CourseStageBlockType
+  id: string
+  content: TextOptions & AIOptions & ButtonOptions & ImageOptions & VideoOptions
+}
+
+enum CourseStageBlockType {
+  AIGenerated
+  Text
+  Button
+  Image
+  Video
+}
+
+class TextOptions {
+  text: string
+  courseId: string
+  stageId: string
+}
+
+class AIOptions {
+  prompt: string
+  provider: string
+  courseId: string
+  stageId: string
+}
+
+class ButtonOptions {
+  text: string
+  courseId: string
+  stageId: string
+}
+
+class ImageOptions {
+  imageURL: string
+  courseId: string
+  stageId: string
+}
+
+class VideoOptions {
+  videoURL: string
+  courseId: string
+  stageId: string
+}
+
+Course "1" -- "many" Stage : contains
+Stage "1" -- "many" CourseStageBlock : contains
+CourseStageBlock "1" -- "1" CourseStageBlockType
+CourseStageBlock "1" -- "1" TextOptions
+CourseStageBlock "1" -- "1" AIOptions
+CourseStageBlock "1" -- "1" ButtonOptions
+CourseStageBlock "1" -- "1" ImageOptions
+CourseStageBlock "1" -- "1" VideoOptions
+@enduml

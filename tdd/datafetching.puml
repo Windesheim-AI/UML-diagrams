@@ -1,0 +1,17 @@
+@startuml
+skinparam monochrome true
+title Prompt Library Data Flow
+actor "User" as u
+participant "React Front End" as fe
+participant "Datafetcher" as df
+database "Wordpress" as wp
+
+u --> fe : Request Prompt Library
+fe --> df : Request Prompt Library
+df --> wp : Authenticated Request Prompt Library
+wp --> df : Response Prompt Library
+df --> fe : Response Prompt Library
+fe --> u : Response Prompt Library
+
+
+@enduml

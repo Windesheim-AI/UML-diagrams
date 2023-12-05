@@ -1,0 +1,13 @@
+@startuml course-data-flow
+
+start
+
+:Get Course Data from API;
+:Get Course Progress data from LocalStorage;
+:Map Course data on to progress data;
+:Pass mapped course data to Component;
+:Render Component;
+
+stop
+
+@enduml
