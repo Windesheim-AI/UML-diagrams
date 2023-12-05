@@ -2,7 +2,6 @@
 left to right direction
 
 actor User as User
-actor BeginnerUser as Beginner
 
 package "Milestone 5 - Learn to Prompt" {
     [Engage in Prompt Exercises] as UC5_1

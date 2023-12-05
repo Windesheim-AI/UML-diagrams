@@ -1,0 +1,24 @@
+@startuml HighContrastSwitcher
+
+class ThemeSlice {
+    +isHighContrastEnabled: boolean
+}
+
+class HighContrastSwitcher {
+    -isHighContrastModeEnabled: boolean
+    +render(): React.Element
+}
+
+class Colors {
+    -colorMap: object
+    -highContrastColorMap: object
+    +useColorConfig(): object
+    +useCurrentHighContrastMode(): boolean
+}
+
+ThemeSlice --> HighContrastSwitcher : provides state
+HighContrastSwitcher --> ThemeSlice : updates state
+ThemeSlice --> Colors : provides state
+Colors --> HighContrastSwitcher : provides colors
+
+@enduml

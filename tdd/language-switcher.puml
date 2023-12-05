@@ -1,0 +1,26 @@
+@startuml Language Switcher
+
+class i18n {
+    +init(): void
+}
+
+class TextTranslated {
+    -text: string
+    +render(): React.Element
+}
+
+class languageOptions {
+    -nl: string
+    -en: string
+    -de: string
+}
+
+class LanguageTranslations {
+    -translation: string
+}
+
+i18n --> LanguageTranslations : uses
+TextTranslated --> i18n : uses
+languageOptions --> LanguageTranslations : provides
+
+@enduml

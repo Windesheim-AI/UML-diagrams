@@ -1,0 +1,24 @@
+@startuml Colors
+
+class ColorMap {
+    light: ColorSchemeType
+    dark: ColorSchemeType
+}
+
+class CurrentTheme{
+
+}
+
+class App{
+
+}
+
+
+
+CurrentTheme --> AppSelector: Uses
+ColorConfig --> hasKeyInMap: Uses
+ColorConfig --> CurrentTheme: Uses
+hasKeyInMap --> ColorMap: Uses
+App --> ColorConfig: Uses
+AppSelector --> Redux: Uses
+@enduml

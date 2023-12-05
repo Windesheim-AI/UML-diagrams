@@ -1,0 +1,39 @@
+@startuml ReactTutorialComponent
+
+class Tutorial {
+    - tutorialStep : int
+    - tutorialCompleted : bool
+    - modalVisible : bool
+    - navigation : Navigation
+    + handleNext() : void
+}
+
+class Navigation {
+}
+
+class TutorialSlice{
+    + tutorialStep : int
+    + tutorialCompleted : bool
+
+    + setCompleted() : void
+    + nextStep() : void
+}
+
+class TutorialResetButton {
+    - navigation : Navigation
+
+    + handleReset() : void
+}
+
+class TutorialData{
+    + title : string
+    + description : string
+    + NextPage : string
+}
+Tutorial --> TutorialSlice
+Tutorial --> Navigation
+Tutorial --> TutorialData
+TutorialSlice --> RootState
+TutorialResetButton --> Navigation
+TutorialResetButton --> TutorialSlice
+@enduml
