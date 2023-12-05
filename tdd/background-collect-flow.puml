@@ -1,0 +1,27 @@
+@startuml background-collect-flow
+
+start
+
+if (isFirstTimeUser is true) then
+    :Render Welcome Message, Buttons: "Okay" and "Skip";
+    if (user clicks "Okay") then
+        :Set showBackgroundInput to true;
+    else
+        :Set isFirstTimeUser to false;
+    endif
+else
+    :Return null;
+endif
+
+if (showBackgroundInput is true) then
+    :Render Background Input Form;
+    while (questions not answered) is (true) 
+        :User answers question;
+        :Store response in Redux;
+    endwhile
+    :Set isFirstTimeUser to false;
+endif
+
+stop
+
+@enduml

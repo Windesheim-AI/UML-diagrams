@@ -1,0 +1,22 @@
+@startuml PromptLibrary
+
+start
+
+:Initialize PromptLibrary;
+:Fetch data using usePromptLibrary;
+if (Data fetched successfully?) then (yes)
+  :Apply filters using selectedTools and selectedSectors;
+  if (Any prompts match the filter?) then (yes)
+    :Render list of PromptCards;
+  else (no)
+    :Display "No prompts found" message;
+  endif
+else (no)
+  :Display error message;
+endif
+
+:Render GoBackButton;
+
+stop
+
+@enduml
