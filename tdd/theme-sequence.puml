@@ -1,0 +1,22 @@
+@startuml Theme Flow
+
+actor User
+participant "Colors" as Colors
+database Redux
+participant "ThemeSlice" as ThemeSlice
+
+User -> Colors : useCurrentTheme()
+activate Colors
+Colors -> Redux : Retrieves theme
+Redux --> Colors : Returns theme
+Colors --> User : Returns theme
+deactivate Colors
+
+User -> ThemeSlice : setTheme()
+activate ThemeSlice
+ThemeSlice -> Redux : Stores theme
+Redux --> ThemeSlice : Confirmation
+ThemeSlice --> User : Confirmation
+deactivate ThemeSlice
+
+@enduml

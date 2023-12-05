@@ -1,0 +1,32 @@
+@startuml ReduxImplementation
+title Redux Implementation in App
+
+package "Redux Store" {
+  [rootReducer]
+  [store]
+  [persistedStore]
+}
+
+package "Redux Slices" {
+  [notificationSlice]
+  [navigationSlice]
+  [themeSlice]
+  [languageSlice]
+  [layoutSlice]
+  [loadingSlice]
+  [fontSlice]
+  [courseDataSlice]
+  [tutorialSlice]
+  [animationSlice]
+  [backgroundInformationSlice]
+}
+
+package "Redux Hooks" {
+  [useAppDispatch]
+  [useAppSelector]
+}
+
+"Redux Store" --> "Redux Slices" : includes
+"Redux Hooks" --> "Redux Store" : uses
+
+@enduml

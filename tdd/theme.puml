@@ -9,16 +9,11 @@ class CurrentTheme{
 
 }
 
-class App{
-
+class ThemeSlice{
+    +theme : 'light' | 'dark'
 }
-
-
-
-CurrentTheme --> AppSelector: Uses
-ColorConfig --> hasKeyInMap: Uses
-ColorConfig --> CurrentTheme: Uses
-hasKeyInMap --> ColorMap: Uses
-App --> ColorConfig: Uses
-AppSelector --> Redux: Uses
+CurrentTheme --> ThemeSlice: Retrieves
+ThemeSlice --> Redux: Stored In
+ColorConfig --> ColorMap: Builds off
+ColorConfig --> CurrentTheme: Retrieves
 @enduml
