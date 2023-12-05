@@ -9,7 +9,11 @@ class CurrentTheme{
 
 }
 
-CurrentTheme --> Redux: Stored In
+class ThemeSlice{
+    +theme : 'light' | 'dark'
+}
+CurrentTheme --> ThemeSlice: Retrieves
+ThemeSlice --> Redux: Stored In
 ColorConfig --> ColorMap: Builds off
 ColorConfig --> CurrentTheme: Retrieves
 @enduml
