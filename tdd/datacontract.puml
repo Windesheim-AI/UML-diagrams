@@ -1,5 +1,4 @@
 @startuml
-package "Data Contract" as DC{
 package "Courses JSON Schema 1.0.0" <<Rectangle>> {
     class Course {
         _id: int
@@ -44,7 +43,6 @@ package "Prompt JSON Schema2 1.0.0" <<Rectangle>> {
 
     Prompt }o--|| PromptPattern : has
     Prompt }--|| Sector : has
-}
 }
 
 @enduml
