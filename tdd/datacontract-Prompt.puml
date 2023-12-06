@@ -1,0 +1,27 @@
+@startuml
+
+package "Prompt JSON Schema2 1.0.0" <<Rectangle>> {
+    class Prompt {
+        _id: int
+        Title: String
+        Prompt: String
+        Description: String
+        Tool: String
+        ToolLink: Url
+    }
+
+    class PromptPattern {
+        _id: int
+        Title: String
+    }
+
+    class Sector {
+        _id: int
+        Title: String
+    }
+
+    Prompt }o--|| PromptPattern : has
+    Prompt }o--|| Sector : has
+}
+
+@enduml
