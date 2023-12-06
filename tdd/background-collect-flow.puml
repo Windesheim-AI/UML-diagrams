@@ -2,24 +2,25 @@
 
 start
 
-if (isFirstTimeUser is true) then
+if (isFirstTimeUser is true) then (true)
     :Render Welcome Message, Buttons: "Okay" and "Skip";
-    if (user clicks "Okay") then
+    if (user clicks "Okay") then (true)
         :Set showBackgroundInput to true;
-    else
+    else (false)
         :Set isFirstTimeUser to false;
     endif
-else
+else (false)
     :Return null;
 endif
 
-if (showBackgroundInput is true) then
+if (showBackgroundInput is true) then (true)
     :Render Background Input Form;
-    while (questions not answered) is (true) 
+    while (questions answered) is (false)
         :User answers question;
         :Store response in Redux;
-    endwhile
+    endwhile (true)
     :Set isFirstTimeUser to false;
+    else(false)
 endif
 
 :Render App; 
