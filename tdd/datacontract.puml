@@ -1,0 +1,50 @@
+@startuml
+package "Data Contract" as DC{
+package "Courses JSON Schema 1.0.0" <<Rectangle>> {
+    class Course {
+        _id: int
+        Title: String
+        Description: String
+    }
+
+    class Stage {
+        _id: int
+        Title: String
+    }
+
+    class Block{
+        _id: int
+        BlockType: String
+        Content: String
+    }
+
+    Course ||--o{ Stage : has
+    Stage ||--o{ Block : has
+}
+
+package "Prompt JSON Schema2 1.0.0" <<Rectangle>> {
+    class Prompt {
+        _id: int
+        Title: String
+        Prompt: String
+        Description: String
+        Tool: String
+        ToolLink: Url
+    }
+
+    class PromptPattern {
+        _id: int
+        Title: String
+    }
+
+    class Sector {
+        _id: int
+        Title: String
+    }
+
+    Prompt }o--|| PromptPattern : has
+    Prompt }--|| Sector : has
+}
+}
+
+@enduml
