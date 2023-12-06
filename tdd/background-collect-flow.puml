@@ -22,6 +22,8 @@ if (showBackgroundInput is true) then
     :Set isFirstTimeUser to false;
 endif
 
+:Render App; 
+
 stop
 
 @enduml
