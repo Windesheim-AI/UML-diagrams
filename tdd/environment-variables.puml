@@ -5,8 +5,8 @@ package "Configuration" {
     [OPENAI_API_KEY=]
     [APP_DEBUG="true | false"]
     [AI_ENABLED="true | false"]
-    [WP_CONTENT_URL="https://www.windesheim.tech"]
-    [WP_DATA_URL="https://www.windesheim.ai"]
+    [WP_CONTENT_URL="URL"]
+    [WP_DATA_URL="URL"]
     [WP_USERNAME=]
     [WP_PASSWORD=]
 }
@@ -16,8 +16,8 @@ node "Your Application" {
     [Config File] --> [OPENAI_API_KEY=]
     [Config File] --> [APP_DEBUG="true | false"]
     [Config File] --> [AI_ENABLED="true | false"]
-    [Config File] --> [WP_CONTENT_URL="https://www.windesheim.tech"]
-    [Config File] --> [WP_DATA_URL="https://www.windesheim.ai"]
+    [Config File] --> [WP_CONTENT_URL="URL"]
+    [Config File] --> [WP_DATA_URL="URL"]
     [Config File] --> [WP_USERNAME=]
     [Config File] --> [WP_PASSWORD=]
 }
