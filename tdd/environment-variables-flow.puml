@@ -1,0 +1,27 @@
+@startuml EnvironmentVariables
+
+package "Environment Variables" {
+    [env.ts]
+}
+
+[env.ts] --> [getEnvValue(key: EnvOptions): string]
+
+note right of [getEnvValue(key: EnvOptions): string]
+  This function retrieves the value of
+  the specified environment variable.
+  If not found, an error is thrown.
+end note
+
+database ".env" {
+  folder "Ignored by Git"
+}
+
+[.env] --> [Ignored by Git]
+
+database ".env.example" {
+  folder "Template"
+}
+
+[.env.example] --> [Template]
+
+@enduml
