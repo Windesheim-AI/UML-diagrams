@@ -11,7 +11,7 @@ package "Configuration" {
     [WP_PASSWORD=]
 }
 
-node "Your Application" {
+node "React Native App" {
     [Config File] 
     [Config File] --> [OPENAI_API_KEY=]
     [Config File] --> [APP_DEBUG="true | false"]
