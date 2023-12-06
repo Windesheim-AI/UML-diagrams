@@ -30,10 +30,10 @@ class TutorialData{
     + description : string
     + NextPage : string
 }
-Tutorial --> TutorialSlice
-Tutorial --> Navigation
-Tutorial --> TutorialData
-TutorialSlice --> RootState
-TutorialResetButton --> Navigation
-TutorialResetButton --> TutorialSlice
+Tutorial <--> TutorialSlice: Reads and handles step
+Tutorial --> Navigation: Navigates using
+Tutorial --> TutorialData: Reads step info from
+TutorialSlice --> Redux: Stores in
+TutorialResetButton --> Navigation: Navigates using
+TutorialResetButton --> TutorialSlice: Resets state
 @enduml
