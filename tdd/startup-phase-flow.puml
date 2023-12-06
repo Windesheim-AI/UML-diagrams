@@ -1,0 +1,18 @@
+@startuml ActivityStartUpPhase
+start
+:App gets opened;
+:Display Splash Screen;
+:Load assets;
+
+if (Theme is dark) then (yes)
+    :Display Dark Theme App;
+else (no)
+    :Display Light Theme App;
+endif
+
+if (isloading is true) then (yes)
+    :Display Loading Screen;
+endif
+
+stop
+@enduml
