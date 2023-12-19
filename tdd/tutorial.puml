@@ -6,6 +6,7 @@ class Tutorial {
     - modalVisible : bool
     - navigation : Navigation
     + handleNext() : void
+    + handlePrevious() : void
 }
 
 class Navigation {
@@ -17,6 +18,7 @@ class TutorialSlice{
 
     + setCompleted() : void
     + nextStep() : void
+    + previousStep() : void
 }
 
 class TutorialResetButton {
@@ -29,6 +31,7 @@ class TutorialData{
     + title : string
     + description : string
     + NextPage : string
+    + PreviousPage : string
 }
 Tutorial <--> TutorialSlice: Reads and handles step
 Tutorial --> Navigation: Navigates using
