@@ -1,35 +1,45 @@
 @startuml SequenceStartUpPhase
+
+actor "User" as U
 participant "App" as A
 participant "Splash Screen" as C
+participant "App Providers" as B
 participant "Tutorial" as T
 participant "Background Collection" as BC
-participant "App Providers" as B
 participant "Home" as D
 
-A -> C: Load SplashScreenOrApp
+U -> A: OpenApp()
+activate A
+A -> C: LoadSplashScreenOrAppComponent()
 activate C
-C --> A: Return SplashScreenOrApp
+C --> A: ReturnSplashScreenOrAppComponent : Splash Screen Rendered 
 deactivate C
-
-A -> T: Show Tutorial
-activate T
-T --> A: Return Tutorial
-deactivate T
-
-A -> BC: Background Collection
-activate BC
-BC --> A: Return Background Collection
-deactivate BC
-
-A -> B: Initialize AppProviders
+A -> B: InitializeAppProvidersComponent()
 activate B
-B --> A: Return AppProviders
+B --> A: RenderAppProvidersComponentWithinApp()
 deactivate B
 
-C -> D: Navigate to Home
+U -> A: StartBackgroundCollection()
+A -> BC: InitializeBackgroundCollectionComponentWithinApp()
+activate BC
+BC --> A: BackgroundCollectionCompleted()
+A --> U: RenderBackgroundCollectionComponentWithinApp()
+deactivate BC
+deactivate A
+
+U -> A: StartTutorial()
+activate A
+A -> T: InitializeTutorialComponent()
+activate T
+T --> A: TutorialStarted()
+A --> U: RenderTutorialComponentWithinApp()
+deactivate T
+
+A -> D: InitializeHomeScreen()
 activate D
-D --> C: Return Home screen
+D --> A: ReturnHomeScreenComponent : Home Screen Initialized
+A --> U: RenderHomeScreenComponentWithinApp : Home Screen Rendered
 deactivate D
-C --> A: Return Home screen
+deactivate A
 
 @enduml
