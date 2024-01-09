@@ -13,7 +13,7 @@ activate A
 A -> C: LoadSplashScreenOrAppComponent()
 activate C
 C --> A: ReturnSplashScreenOrAppComponent : Splash Screen Rendered 
-A --> U: RenderSplashScreenOrAppComponent 
+A --> U: RenderSplashScreenOrAppToUser() 
 deactivate C
 A -> B: InitializeAppProvidersComponent()
 activate B
@@ -25,20 +25,20 @@ U -> A: StartBackgroundCollection()
 activate A
 A -> BC: InitializeBackgroundCollectionComponentWithinApp()
 activate BC
-BC --> A: BackgroundCollectionCompleted()
-A --> U: RenderBackgroundCollectionComponentWithinApp()
+BC --> A: RenderBackgroundCollectionInApp()
+A --> U: RenderBackgroundCollectionToUser()
 deactivate BC
 U -> A: TutorialStart()
 A -> T: InitializeTutorialComponent()
 activate T
-T --> A: TutorialStarted()
-A --> U: RenderTutorialComponentWithinApp()
+T --> A: RenderTutorialComponentWithinApp()
+A --> U: RenderTutorialToUser()
 deactivate T
 
 A -> D: InitializeHomeScreen()
 activate D
 D --> A: ReturnHomeScreenComponent : Home Screen Initialized
-A --> U: RenderHomeScreenComponentWithinApp : Home Screen Rendered
+A --> U: RenderHomeScreenComponentToUser : Home Screen Rendered
 deactivate D
 deactivate A
 
