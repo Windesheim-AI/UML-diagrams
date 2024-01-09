@@ -8,29 +8,27 @@ participant "Tutorial" as T
 participant "Background Collection" as BC
 participant "Home" as D
 
-
 U -> A: OpenApp()
 activate A
 A -> C: LoadSplashScreenOrAppComponent()
 activate C
 C --> A: ReturnSplashScreenOrAppComponent : Splash Screen Rendered 
+A --> U: RenderSplashScreenOrAppComponent 
 deactivate C
 A -> B: InitializeAppProvidersComponent()
 activate B
 B --> A: RenderAppProvidersComponentWithinApp()
 deactivate B
+deactivate A
 
 U -> A: StartBackgroundCollection()
+activate A
 A -> BC: InitializeBackgroundCollectionComponentWithinApp()
 activate BC
 BC --> A: BackgroundCollectionCompleted()
 A --> U: RenderBackgroundCollectionComponentWithinApp()
-BC -> R: StoreBackgroundInfo()
 deactivate BC
-deactivate A
-
-U -> A: StartTutorial()
-activate A
+U -> A: TutorialStart()
 A -> T: InitializeTutorialComponent()
 activate T
 T --> A: TutorialStarted()
