@@ -14,5 +14,6 @@ if (isloading is true) then (yes)
     :Display Loading Screen;
 endif
 
+:Display Home Screen;
 stop
 @enduml
