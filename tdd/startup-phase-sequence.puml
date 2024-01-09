@@ -19,16 +19,12 @@ A -> B: InitializeAppProvidersComponent()
 activate B
 B --> A: RenderAppProvidersComponentWithinApp()
 deactivate B
-deactivate A
 
-U -> A: StartBackgroundCollection()
-activate A
 A -> BC: InitializeBackgroundCollectionComponentWithinApp()
 activate BC
 BC --> A: RenderBackgroundCollectionInApp()
 A --> U: RenderBackgroundCollectionToUser()
 deactivate BC
-U -> A: TutorialStart()
 A -> T: InitializeTutorialComponent()
 activate T
 T --> A: RenderTutorialComponentWithinApp()
